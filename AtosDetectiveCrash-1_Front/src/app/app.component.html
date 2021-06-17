@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="d-flex flex-column p-2 text-white" style="width: 280px;display: block;background-color: #0166a0;height: 100%;position: fixed; z-index: 1; top: 0;left: 0;padding-top: 60px;">
+        <span class="fs-4" style="text-align: center;">
+          <h4>Atos Car Sharing</h4>
+          <img src="../assets/img/atos3.jpg" width="160" height="80">
+        </span>
+        <br>
+        <!-- Cambiar imagen -->
+
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li>
+            <a routerLinkActive='active' class="nav-link text-white" routerLink="home" *ngIf="isLoggedIn">
+              <svg class="bi me-2" width="16" height="16"></svg>
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a routerLinkActive='active' class="nav-link text-white" routerLink="profile" *ngIf="isLoggedIn&&!isAdmin">
+              <svg class="bi me-2" width="16" height="16"></svg>
+              Perfil
+            </a>
+          </li>
+          <li>
+            <a routerLinkActive='active' class="nav-link text-white" routerLink="rent" *ngIf="isLoggedIn&&!isAdmin">
+              <svg class="bi me-2" width="16" height="16"></svg>
+              Alquiler
+            </a>
+          </li>
+          <li>
+            <a routerLinkActive='active' class="nav-link text-white" routerLink="detection" *ngIf="isLoggedIn&&!isAdmin"> <svg class="bi me-2" width="16" height="16"></svg>
+              Deteccion golpes
+            </a>
+          </li>
+          <li>
+            <a routerLinkActive='active' class="nav-link text-white" routerLink="vehiculos" *ngIf="isAdmin"> <svg class="bi me-2" width="16" height="16"></svg>
+              Añadir vehiculo
+            </a>
+          </li>
+
+          <li>
+            <a routerLinkActive='active' class="nav-link text-white" routerLink="lista-vehiculos" *ngIf="isAdmin"> <svg class="bi me-2" width="16" height="16"></svg>
+              Lista vehiculos
+            </a>
+          </li>
+
+          <li>
+            <a routerLinkActive='active' class="nav-link text-white" routerLink="rent-admin" *ngIf="isAdmin"> <svg class="bi me-2" width="16" height="16"></svg>
+              Ver alquileres
+            </a>
+          </li>
+
+          <li>
+            <a routerLinkActive='active' class="nav-link text-white" routerLink="clientes-admin" *ngIf="isAdmin"> <svg class="bi me-2" width="16" height="16"></svg>
+              Ver clientes
+            </a>
+          </li>
+
+          <li>
+            <a routerLinkActive='active' class="nav-link text-white" routerLink="comparacion-admin" *ngIf="isAdmin">
+              <svg class="bi me-2" width="16" height="16"></svg>
+              Comparar daños
+            </a>
+          </li>
+        </ul>
+        <hr>
+        <a href="/register" class="nav-link text-white" routerLink="register" *ngIf="!isLoggedIn"> <svg class="bi me-2" width="16" height="16"></svg>
+          Registrarse
+        </a>
+
+        <a href="/login" class="nav-link text-white" routerLink="login" *ngIf="!isLoggedIn"><svg class="bi me-2" width="16" height="16"></svg>
+          Acceder
+        </a>
+
+        <a  class="nav-link text-white"  *ngIf="isLoggedIn"><svg class="bi me-2" width="16" height="16"></svg>
+          {{ username }}
+        </a>
+
+        <a href class="nav-link text-white" (click)="logout()" *ngIf="isLoggedIn"><svg class="bi me-2" width="16" height="16"></svg>
+          Cerrar sesion
+        </a>
+      </div>
+    </div>
+
+    <div class="col-sm">
+      <br><br>
+      <div style='position: sticky;align:center;width:150%;margin-left:-250px;'>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

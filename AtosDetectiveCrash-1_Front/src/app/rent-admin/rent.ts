@@ -1,0 +1,24 @@
+export class Rent {
+  id_alquiler: Number;
+  id_coche: Number;
+  matricula_coche: String;
+  id_cliente: String;
+  fecha_recogida: Date;
+  hora_recogida: Date;
+  fecha_devolucion: Date;
+  hora_devolucion: Date;
+  ciudadAlquiler: String;
+  ciudadAlquilerDevolucion:String;
+  num_puertas:String;
+  email: String;
+  gama: String;
+  codRefrencia: String;
+  imagen_inicio: File;
+  imagen_final: File;
+  golpe_grave_inicio: String;
+  golpe_medio_inicio: String;
+  golpe_leve_inicio: String;
+  golpe_grave_final: String;
+  golpe_medio_final: String;
+  golpe_leve_final: String;
+};

@@ -1,0 +1,59 @@
+<div class="card bg-dark text-white fixed" style='margin: auto'>
+  <div class="card-header">
+    Editar Perfil
+  </div>
+  <div class="card-body">
+    <form *ngIf="!isSuccessful" name="form" #f="ngForm" novalidate>
+      <div class="form-group">
+        <label for="nombre">Nombre: {{user.nombre}}</label>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="user.nombre" name="nombre">
+      </div>
+      <div class="form-group">
+        <label for="apellidos">Apellidos:</label>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="user.apellidos" name="apellidos">
+      </div>
+      <div class="form-group ">
+        <label for="dni">DNI:</label>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="user.dni" name="dni">
+      </div>
+      <div class="form-group">
+        <label for="nacimiento">Fecha de Nacimiento:</label>
+      </div>
+      <div class="form-group">
+        <input type="date" class="form-control" name="nacimiento" [(ngModel)]="user.date" />
+      </div>
+      <div class="form-group ">
+        <label for="dni">Telefono:</label>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="user.telefono" name="dni">
+      </div>
+      <div class="form-group">
+        <label for="facturacion">Lugar de facturación:</label>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="user.facturacion" name="facturacion">
+      </div>
+      <div class="form-group">
+        <label for="cod_postal">Cod postal:</label>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="user.cod_postal" name="cod_postal">
+      </div>
+      <div class="row" style='text-align:center'>
+        <div class="col-sm">
+          <button class="btn btn-primary" (click)="onSubmit()" role="button">Guardar Cambios</button>
+        </div>
+        <div class="col-sm">
+          <button class="btn btn-danger" routerLink="/profile" role="button">Volver a perfil </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="table-responsive-xl"style='width:80%;margin-left:150px;' >
+  <div class="card  mb-3">
+    <div class="card-header">
+      Alquileres
+    </div>
+    <div class="card-body text-primary">
+      <table class='table table-bordered table-striped table-hover'>
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Dia recogida</th>
+            <th>Hora recogida</th>
+            <th>Dia devolucion</th>
+            <th>Hora recogida</th>
+            <th>Ciudad Alquiler</th>
+            <th>Codigo de referencia</th>
+            <th>Coche Asignado</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let rent of rents'>
+            <td>{{rent.id_cliente}}</td>
+            <td>{{rent.fecha_recogida}}</td>
+            <td>{{rent.hora_recogida}}</td>
+            <td>{{rent.fecha_devolucion}}</td>
+            <td>{{rent.hora_devolucion}}</td>
+            <td>{{rent.ciudadAlquiler}}</td>
+            <td>{{rent.codRefrencia}}</td>
+            <td><div *ngIf="rent.matricula_coche!=null; else elseBlock">{{rent.matricula_coche}}</div><ng-template #elseBlock>No hay coche</ng-template></td>
+            <td>
+              <button *ngIf="rent.matricula_coche==null;else else_" type='button' name='button' routerLinkActive='active' [routerLink]="['/rent-admin/asignar-coche', rent.id_alquiler , rent.id_coche]" class="btn btn-primary">Asignar coche</button>
+              <ng-template #else_>
+                <button type='button' name='button' routerLinkActive='active' [routerLink]="['/rent-admin/asignar-coche', rent.id_alquiler , rent.id_coche]" class="btn btn-primary">Reasignar coche</button>
+              </ng-template>
+            </td>
+            <td *ngIf="rent.matricula_coche!=null">
+              <button type='button' name='button' (click)='unsignCar(rent)' class="btn btn-danger">Desasignar Coche</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

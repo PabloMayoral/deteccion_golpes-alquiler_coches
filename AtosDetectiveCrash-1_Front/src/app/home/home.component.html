@@ -1,0 +1,29 @@
+<div class="card" style='width: 70%' *ngIf="!isAdmin;else elseBlock">
+  <br>
+  <img src="../assets/img/atospng.png" width="195" height="75" style='display: block;margin-left: auto;margin-right: auto;'>
+  <br><br><br>
+  <div class="card-body">
+    <h5>Bienvenidos a <b>Atos Detective Crash </b> la pagina de alquiler que detecta</h5>
+    <h5>los golpes del vehiculo a la hora de alquilarlo.</h5>
+    <br>
+    <h6>Para realizar el alquiler deberas de rellenar la información en tu perfil, y una vez relleno</h6>
+    <h6>irá a la seccion de alquileres, elegirá los datos basicos de una reserva y le llegara el codigo de referencia </h6>
+    <h6>que usara el dia de la reserva para subir la foto del coche al recogerlo y el dia de la devolucion tendra que subirla de nuevo.</h6>
+    <br>
+    <h5><b>¡No borre el correo para no perder el codigo de referencia!</b></h5>
+  </div>
+</div>
+
+<ng-template #elseBlock>
+  <div class="card" style='width: 70%' >
+    <br>
+    <img src="../assets/img/atospng.png" width="195" height="75" style='display: block;margin-left: auto;margin-right: auto;'>
+    <br><br><br>
+    <div class="card-body">
+      <h5>Bienvenidos a <b>Atos Detective Crash</b>, administrador</h5>
+      <br>
+      <h6>Desde aqui podras, <b>añadir vehiculos para asignarlos a reservas</b>, ver los vehiculos añadidos, ver los alquileres y asignar sus coches, ver la informacion basica de los clientes y comparar los daños de las fotos subidas por el usuario con su codigo de referencia.que usara el dia de la reserva para subir la foto del coche al recogerlo y el dia de la devolucion tendra que subirla de nuevo.</h6>
+      <br>
+    </div>
+  </div>
+</ng-template>

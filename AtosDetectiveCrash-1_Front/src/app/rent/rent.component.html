@@ -1,0 +1,89 @@
+<div class="table-responsive-s" style='width:500px;'>
+  <div class="card border-primary">
+    <div class="card-header" style='text-align: center;'>
+      Alquiler
+    </div>
+    <div class="card-body">
+      <form name='form' (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <br>
+        <div class="form-group">
+          <label for="datePickup">Fecha de recogida</label>
+          <div>
+            <input type="date" class="form-control" [(ngModel)]="rent.fecha_recogida" #diaRecogida="ngModel" name='diaRecogida' />
+            <input type="time" class="form-control" [(ngModel)]="rent.hora_recogida" #horaRecogida="ngModel" name='horaRecogida' />
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="dateDevolution">Fecha de devolución </label>
+          <div>
+            <input type="date" class="form-control" [(ngModel)]="rent.fecha_devolucion" #diaDevolucion="ngModel" name='diaDevolucion' />
+            <input type="time" class="form-control" [(ngModel)]="rent.hora_devolucion" #horaDevolucion="ngModel" name='horaDevolucion' />
+          </div>
+        </div>
+        <br>
+        <div class="row" style='text-align:center'>
+          <div class="col-sm">
+            <div class="form-group">
+              <label for='recogida' class="form-label">Ciudad de recogida‎‎</label>
+            </div>
+            <select style='width:200px' class="form-select" aria-label="Default select example" [(ngModel)]="rent.ciudadAlquiler" #ciudadAlquiler="ngModel" name='recogida'>
+              <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
+              <option value="Las Palmas de Gran Canaria">Las Palmas de Gran Canaria</option>
+              <option value="Fuerteventura">Fuerteventura</option>
+            </select>
+          </div>
+          <div class="col-sm">
+            <div *ngIf="check">
+              <div class="form-group">
+                <label for='devolucion' class="form-label">Ciudad de devolucion</label>
+              </div>
+              <select style='width:200px' class="form-select" aria-label="Default select example" [(ngModel)]="rent.ciudadAlquilerDevolucion" name='devolucion'>
+                <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
+                <option value="Las Palmas de Gran Canaria">Las Palmas de Gran Canaria</option>
+                <option value="Fuerteventura">Fuerteventura</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label><input type='checkbox' (change)='check=!check'> Devolucion en una ciudad distinta</label>
+        </div>
+        <br>
+        <div class="row" style='text-align:center'>
+          <div class="col-sm">
+            <div class="form-group">
+              <label for='devolucion' class="form-label">Numero de puertas</label>
+            </div>
+            <div class="form-group">
+              <select style='width:200px' class="form-select" aria-label="Default select example" [(ngModel)]="rent.num_puertas" #num_puertas="ngModel" name='devolucion'>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="form-group">
+              <label for='gama' class="form-label">Gama del coche</label>
+            </div>
+            <div class="form-group">
+              <select style='width:200px' class="form-select" aria-label="Default select example" [(ngModel)]="rent.gama" name='gama'>
+                <option value="Baja">Baja</option>
+                <option value="Media">Media</option>
+                <option value="Alta">Alta</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="form-group" style='text-align:center;'>
+          <input type='submit' class="btn btn-primary" value='Alquilar'>
+        </div>
+        <br>
+      </form>
+    </div>
+  </div>
+</div>

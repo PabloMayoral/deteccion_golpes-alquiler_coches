@@ -1,0 +1,34 @@
+<div class="table-responsive-xl" style='width:1000px;margin-left:150px;'>
+  <div class="card border-primary mb-3">
+    <div class="card-header">
+      Vehiculos
+    </div>
+    <div class="card-body text-primary">
+      <table class='table table-bordered table-striped table-hover'>
+        <thead>
+          <tr>
+            <th>Matricula</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Numero de bastidor</th>
+            <th>Color</th>
+            <th>Imagen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor='let vehiculo of vehiculos'>
+            <tr *ngIf="vehiculo.alquilado==0 && rents.num_puertas==vehiculo.num_puertas">
+              <td>{{vehiculo.matricula}}</td>
+              <td>{{vehiculo.marca}}</td>
+              <td>{{vehiculo.modelo}}</td>
+              <td>{{vehiculo.num_bastidor}}</td>
+              <td>{{vehiculo.color}}</td>
+              <td><img width="50px" height="50px" src="data:image/jpg;base64,{{vehiculo.image}}"></td>
+              <td><button type='button' name='button' (click)='asignCar(vehiculo)' class="btn btn-primary">Asignar este vehiculo</button></td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

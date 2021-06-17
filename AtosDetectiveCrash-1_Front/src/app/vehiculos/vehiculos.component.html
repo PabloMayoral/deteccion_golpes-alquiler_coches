@@ -1,0 +1,78 @@
+<div class="card card-container bg-dark text-white fixed" style='width:500px;margin-left:100px;'>
+  <div class="card-header" style="text-align: center;">
+    Añadir vehiculo
+  </div>
+  <div class="card-body">
+    <form name="form" (ngSubmit)="onSubmit()" enctype='multipart/form-data' novalidate>
+      <div class="form-group row">
+        <label for="matricula" class="col-form-lavel col-sm">Matricula:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="vehiculo.matricula" name="matricula" required minlength="3" maxlength="20" #matricula="ngModel">
+        </div>
+      </div>
+      <br>
+      <div class="form-group row">
+        <label for="marca" class="col-form-lavel col-sm">Marca:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="vehiculo.marca" name="marca" required minlength="3" maxlength="20" #marca="ngModel">
+        </div>
+      </div>
+          <br>
+      <div class="form-group row">
+        <label for="modelo" class="col-form-lavel col-sm">Modelo:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="vehiculo.modelo" name="modelo" required minlength="3" maxlength="20" #modelo="ngModel">
+        </div>
+      </div>
+          <br>
+      <div class="form-group row">
+        <label for="num_bastidor" class="col-form-lavel col-sm">Numero de bastidor:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="vehiculo.num_bastidor" name="num_bastidor" required minlength="3" maxlength="20" #num_bastidor="ngModel">
+        </div>
+      </div>
+          <br>
+      <div class="form-group row">
+        <label for="color" class="col-form-lavel col-sm">Color:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="vehiculo.color" name="color" required minlength="3" maxlength="20" #color="ngModel">
+        </div>
+      </div>
+          <br>
+      <div class="form-group">
+        <label for="num_puertas" class="form-label">Numero de puertas: ‎      ‏‏‎</label>
+        <select style='width:200px' class="form-select" aria-label="Default select example" [(ngModel)]="vehiculo.num_puertas" #num_puertas="ngModel" name='num_puertas'>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+          <br>
+      <div class="form-group">
+        <label for="gama" class="form-label">Gama del coche:  ‎      ‏‏‎</label>
+        <select style='width:200px' class="form-select" aria-label="Default select example" [(ngModel)]="vehiculo.gama" name='gama'>
+          <option value="Baja">Baja</option>
+          <option value="Media">Media</option>
+          <option value="Alta">Alta</option>
+        </select>
+      </div>
+      <div class="form-group" style='text-align:center'>
+        <img [src]="url" height="200">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="file" class="form-label">Subir imagen del coche:</label>
+      </div>
+      <div class="form-group">
+        <input type='file' (change)="onSelectFile($event)" id='file' name='file' accept=".jpg" required>
+      </div>
+      <br>
+      <div class="form-grou row">
+        <div class="col-sm-6">
+          <button class="btn btn-primary" role="button">Crear</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

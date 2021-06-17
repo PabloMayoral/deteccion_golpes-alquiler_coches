@@ -1,0 +1,55 @@
+<div class="table-responsive-xl" style='width:550px;margin-left:150px;'>
+  <div class="card card-container bg-dark text-white fixed" >
+    <div class="card-header">
+      Comparador de daños
+    </div>
+    <div class="card-body text-white fixed">
+      <div class="form-group">
+        <label for="nombre">ID de la reserva:</label>
+      </div>
+      <br>
+      <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="rent.codRefrencia" name="id_alquiler">
+      </div>
+      <br>
+      <div class="form-group">
+        <button class="btn btn-primary" (click)="onSubmit()" role="button">Buscar</button>
+      </div>
+      <div class="card-body text-primary">
+        <ng-container *ngIf="rentFind">
+          <h5 style='text-align:center'>{{rent[0].codRefrencia}}</h5>
+          <table class='table table-borderless text-white fixed' style='border: none'>
+            <thead>
+              <tr>
+                <th></th>
+                <th><img width="150px" height="150px" src="data:image/jpg;base64,{{rent[0].imagen_inicio}}"></th>
+                <th></th>
+                <th><img width="150px" height="150px" src="data:image/jpg;base64,{{rent[0].imagen_final}}"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Golpes leves: </td>
+                <td>Inicio: {{rent[0].golpe_leve_inicio}}</td>
+                <td></td>
+                <td>Final: {{rent[0].golpe_leve_final}}</td>
+              </tr>
+              <tr>
+                <td>Golpes medios: </td>
+                <td>Inicio: {{rent[0].golpe_medio_inicio}}</td>
+                <td></td>
+                <td>Final: {{rent[0].golpe_medio_final}}</td>
+              </tr>
+              <tr>
+                <td>Golpes graves: </td>
+                <td>Inicio: {{rent[0].golpe_grave_inicio}} </td>
+                <td></td>
+                <td>Final: {{rent[0].golpe_grave_final}} </td>
+              </tr>
+            </tbody>
+          </table>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
